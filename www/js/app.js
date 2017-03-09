@@ -4,13 +4,13 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+  
   var config = {
     apiKey: "AIzaSyDwHLfSjnJKou684SFFQzd1vo49aW2FKLY",
     authDomain: "lovermobile-bb048.firebaseapp.com",
-    databaseURL: "https://somloverapp.firebaseio.com",
-    //storageBucket: "somloverapp.appspot.com",
-    //messagingSenderId: "516665192214"
+    databaseURL: "https://lovermobile-bb048.firebaseio.com",
   };
+
   firebase.initializeApp(config);
 
 var app = angular.module('starter', ['ionic', 'firebase', 'ionic.contrib.ui.tinderCards'])
@@ -31,7 +31,7 @@ var app = angular.module('starter', ['ionic', 'firebase', 'ionic.contrib.ui.tind
   });
 })
 
-.constant('FURL', 'https://somloverapp.firebaseio.com/')
+.constant('FURL', 'lovermobile-bb048.firebaseio.com')
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -107,6 +107,7 @@ var app = angular.module('starter', ['ionic', 'firebase', 'ionic.contrib.ui.tind
           auth: function($state, Auth) {
             return Auth.requireAuth().catch(function() {
               $state.go('login');
+              // state.go('login');
             });
           },
 
